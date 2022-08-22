@@ -15,7 +15,7 @@ const dataLoaded = ref(null);
 // Get data
 const getData = async () => {
   try {
-    const {data: workouts, error} = await supabase.from('workouts').select('*');
+    const { data: workouts, error } = await supabase.from('workouts').select('*');
     if (error) throw error;
     data.value = workouts;
     dataLoaded.value = true;
