@@ -23,6 +23,11 @@ const routes = [
 		name: 'Register',
 		component: () => import('../views/Register.vue'),
 	},
+	{
+		path: '/view-workout/:workoutId',
+		name: 'View-Workout',
+		component: () => import('../views/ViewWorkout.vue'),
+	},
 ];
 
 const router = createRouter({

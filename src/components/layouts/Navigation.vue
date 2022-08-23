@@ -25,9 +25,9 @@ import { supabase } from '../../supbase/supabase';
 
 const store = useStore();
 const router = useRouter();
-const user = computed(() => store.state.user);
-console.log(user)
 
+
+const user = computed(() => store.state.user);
 
 const logout = async () => {
   await supabase.auth.signOut();

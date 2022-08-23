@@ -116,7 +116,7 @@
         </div>
 
         <!-- Cardio Inputs -->
-        <div v-if="workoutType === 'cardio'" class="flex flex-col gap-y-4">
+        <div v-if="workoutType == 'cardio'" class="flex flex-col gap-y-4">
           <div
             class="flex flex-col gap-x-6 gap-y-2 relative md:flex-row"
             v-for="(item, index) in exercises"
@@ -203,11 +203,10 @@
 
 <script setup>
 import { ref } from "vue";
-import { useStore } from "vuex";
 import { uid } from 'uid'
 import { supabase } from "../supbase/supabase";
 
-const store = useStore();
+
 const errorMsg = ref(null);
 const statusMsg = ref(null)
 const workoutName = ref('');
@@ -226,7 +225,7 @@ const addExercise = () => {
         })
         return;
     }
-    if (workoutType.value === 'strength') {
+    if (workoutType.value === 'cardio') {
         exercises.value.push({
             id: uid(),
             cardioType: '',
