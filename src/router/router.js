@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/Home.vue';
-import {supabase} from '../supbase/supabase' 
+import {supabase} from '../supbase' 
 
 
 const routes = [
