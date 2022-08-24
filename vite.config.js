@@ -7,6 +7,7 @@ export default ({ mode }) => {
 
   return defineConfig({
       plugins: [vue(), svgLoader()],
+      'process.env': process.env
   });
 
 }
