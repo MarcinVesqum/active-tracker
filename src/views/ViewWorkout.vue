@@ -42,7 +42,6 @@
           src="../assets/images/running-light-green.png"
           alt=""
         />
-
         <img
           v-else
           class="h-24 w-auto"
@@ -241,7 +240,7 @@
       <!-- Update -->
       <button
         v-if="edit"
-        @click="update"
+        @click="updateWorkout"
         type="button"
         class="mt-10 py-2 px-6 rounded-sm self-start text-sm text-white
             bg-at-light-green duration-200 border-solid border-2 border-transparent
@@ -293,8 +292,6 @@ const getData = async () => {
 getData();
 
 
-
-
 // Delete workout
 const deleteWorkout = async () => {
   try {
@@ -339,8 +336,8 @@ const addExercise = () => {
 }
 // Delete exercise
 const deleteExercise = (id) => {
-  if (data.value.exercises.lenght > 1) {
-    data.value.exercises = data.value.exercises.filter(
+  if (data.value.exercise.lenght > 1) {
+    data.value.exercise = data.value.exercise.filter(
       (exercise => exercise.id !== id)
     );
     return;
@@ -351,6 +348,32 @@ const deleteExercise = (id) => {
   }, 5000);
 }
 // Update Workout
+
+const updateWorkout = async () => {
+  
+    try {
+      const { data: workouts, error } = await supabase
+      .from('workouts')
+      .update({
+        workoutName: data.value.workoutName,
+        exercises: data.value.exercises,
+      })
+      .eq('id', currentId)
+      edit.value = false;
+      statusMsg.value = "Success: Workout Update!"
+      setTimeout(() => {
+        statusMsg.value = false;
+      }, 5000)
+    }
+    catch(error)  {
+      errorMsg.value = `Error: ${error.message}`
+      setTimeout(() => {
+        errorMsg.value = false;
+      }, 5000)
+    }
+  
+
+}
 
 </script>
 
