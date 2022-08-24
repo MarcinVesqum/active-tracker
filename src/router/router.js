@@ -46,7 +46,7 @@ const routes = [
 		component: () => import('../views/ViewWorkout.vue'),
 		meta: {
 			title: 'View Workout',
-			auth: true
+			auth: false
 		}
 	},
 ];
