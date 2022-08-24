@@ -9,7 +9,7 @@
 <script setup>
 import { ref } from 'vue';
 import Navigation from './components/layouts/Navigation.vue';
-import { supabase } from './supbase/supabase';
+import { supabase } from './supbase/supabase.js';
 import { useStore } from 'vuex';
 
 const appReady = ref(null);
