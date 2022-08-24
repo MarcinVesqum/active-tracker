@@ -52,7 +52,7 @@ const routes = [
 ];
 
 const router = createRouter({
-	history: createWebHistory(import.meta.env.VITE_SUPABASE_URL),
+	history: createWebHistory(),
 	routes,
 });
 
