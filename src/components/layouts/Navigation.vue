@@ -21,7 +21,7 @@ import { ref, computed } from 'vue';
 import { useStore } from 'vuex';
 import { useRouter } from 'vue-router';
 import VueIcon from '../../assets/vue.svg';
-import { supabase } from '../../supbase/supabase';
+import { supabase } from '../../supbase/init';
 
 const store = useStore();
 const router = useRouter();

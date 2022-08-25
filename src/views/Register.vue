@@ -53,7 +53,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { supabase } from "../supbase/supabase.js";
+import { supabase } from "../supbase/init";
 import { useRouter } from "vue-router";
 
 const router = useRouter();

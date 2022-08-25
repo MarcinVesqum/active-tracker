@@ -44,7 +44,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { supabase } from "../supbase/supabase";
+import { supabase } from "../supbase/init";
 
 //  Create data
 const data = ref([]);

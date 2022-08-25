@@ -9,7 +9,7 @@
 <script setup>
 import { ref } from 'vue';
 import Navigation from './components/layouts/Navigation.vue';
-import { supabase } from './supbase/supabase.js';
+import { supabase } from './supbase/init.js';
 import { useStore } from 'vuex';
 
 const appReady = ref(null);
@@ -25,6 +25,7 @@ supabase.auth.onAuthStateChange((_, session) => {
   appReady.value = true;
 })
 
+console.log(import.meta.env)
 
 </script>
 

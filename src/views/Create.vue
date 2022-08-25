@@ -204,7 +204,7 @@
 <script setup>
 import { ref } from "vue";
 import { uid } from 'uid'
-import { supabase } from "../supbase/supabase";
+import { supabase } from "../supbase/init";
 
 
 const errorMsg = ref(null);
