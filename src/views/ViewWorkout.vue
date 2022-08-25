@@ -336,8 +336,8 @@ const addExercise = () => {
 }
 // Delete exercise
 const deleteExercise = (id) => {
-  if (data.value.exercise.lenght > 1) {
-    data.value.exercise = data.value.exercise.filter(
+  if (data.value.exercises.length > 1) {
+    data.value.exercises = data.value.exercises.filter(
       (exercise => exercise.id !== id)
     );
     return;
